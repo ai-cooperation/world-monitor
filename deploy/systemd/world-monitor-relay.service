@@ -4,16 +4,16 @@ After=network.target
 
 [Service]
 Type=simple
-User=acmacmini2
-WorkingDirectory=/home/acmacmini2/world-monitor
-ExecStart=/usr/bin/node scripts/ais-relay.cjs
+User=ac-macmini2
+WorkingDirectory=/home/ac-macmini2/world-monitor
+ExecStart=/usr/local/bin/node scripts/ais-relay.cjs
 Restart=always
 RestartSec=30
 Environment=NODE_ENV=production
 Environment=PORT=3004
 Environment=AIS_MAX_VESSELS=10000
 Environment=MEMORY_CLEANUP_THRESHOLD_GB=1.5
-EnvironmentFile=/home/acmacmini2/world-monitor/.env
+EnvironmentFile=/home/ac-macmini2/world-monitor/.env
 
 # Resource limits for 7.6GB RAM machine
 MemoryMax=2G
