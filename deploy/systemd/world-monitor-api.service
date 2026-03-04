@@ -1,0 +1,27 @@
+[Unit]
+Description=World Monitor API Server
+After=network.target
+
+[Service]
+Type=simple
+User=acmacmini2
+WorkingDirectory=/home/acmacmini2/world-monitor
+ExecStart=/usr/bin/node deploy/api-server.mjs
+Restart=always
+RestartSec=10
+Environment=NODE_ENV=production
+Environment=PORT=3001
+Environment=BIND_HOST=127.0.0.1
+EnvironmentFile=/home/acmacmini2/world-monitor/.env
+
+# Resource limits for 7.6GB RAM machine
+MemoryMax=2G
+MemoryHigh=1.5G
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=world-monitor-api
+
+[Install]
+WantedBy=multi-user.target

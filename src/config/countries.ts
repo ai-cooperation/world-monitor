@@ -217,6 +217,42 @@ export const CURATED_COUNTRIES: Record<string, CuratedCountryConfig> = {
     baselineRisk: 15,
     eventMultiplier: 1.0,
   },
+  // APAC Expansion
+  PH: {
+    name: 'Philippines',
+    scoringKeywords: ['philippines', 'filipino', 'manila', 'duterte', 'marcos', 'west philippine sea'],
+    searchAliases: ['philippines', 'filipino', 'manila', 'mindanao'],
+    baselineRisk: 25,
+    eventMultiplier: 1.5,
+  },
+  VN: {
+    name: 'Vietnam',
+    scoringKeywords: ['vietnam', 'vietnamese', 'hanoi', 'ho chi minh'],
+    searchAliases: ['vietnam', 'vietnamese', 'hanoi'],
+    baselineRisk: 15,
+    eventMultiplier: 1.2,
+  },
+  ID: {
+    name: 'Indonesia',
+    scoringKeywords: ['indonesia', 'indonesian', 'jakarta', 'jokowi', 'prabowo'],
+    searchAliases: ['indonesia', 'indonesian', 'jakarta'],
+    baselineRisk: 15,
+    eventMultiplier: 0.9,
+  },
+  SG: {
+    name: 'Singapore',
+    scoringKeywords: ['singapore', 'singaporean'],
+    searchAliases: ['singapore', 'singaporean'],
+    baselineRisk: 5,
+    eventMultiplier: 1.5,
+  },
+  TH: {
+    name: 'Thailand',
+    scoringKeywords: ['thailand', 'thai', 'bangkok'],
+    searchAliases: ['thailand', 'thai', 'bangkok'],
+    baselineRisk: 20,
+    eventMultiplier: 1.0,
+  },
 };
 
 export const TIER1_COUNTRIES: Record<string, string> = {
@@ -243,6 +279,11 @@ export const TIER1_COUNTRIES: Record<string, string> = {
   BR: 'Brazil',
   AE: 'United Arab Emirates',
   MX: 'Mexico',
+  PH: 'Philippines',
+  VN: 'Vietnam',
+  ID: 'Indonesia',
+  SG: 'Singapore',
+  TH: 'Thailand',
 };
 
 export const DEFAULT_BASELINE_RISK = 15;

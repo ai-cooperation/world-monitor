@@ -708,12 +708,57 @@ const FULL_FEEDS: Record<string, Feed[]> = {
     { name: 'Guardian Australia', url: rss('https://www.theguardian.com/australia-news/rss') },
     // Pacific Islands
     { name: 'Island Times (Palau)', url: rss('https://islandtimes.org/feed/') },
+    // Taiwan
+    { name: 'Focus Taiwan', url: rss('https://focustaiwan.tw/rss') },
+    { name: 'Taipei Times', url: rss('https://www.taipeitimes.com/xml/index.rss') },
+    { name: 'Taiwan News', url: rss('https://www.taiwannews.com.tw/en/rss') },
+    { name: 'Taiwan Strait Watch', url: rss('https://news.google.com/rss/search?q=(Taiwan+strait+OR+PLA+Taiwan+OR+TSMC+OR+cross-strait)+when:2d&hl=en-US&gl=US&ceid=US:en') },
+    { name: 'Semiconductor Watch', url: rss('https://news.google.com/rss/search?q=(TSMC+OR+semiconductor+shortage+OR+chip+foundry+OR+advanced+packaging)+when:3d&hl=en-US&gl=US&ceid=US:en') },
+    // Philippines
+    { name: 'Rappler', url: rss('https://www.rappler.com/feed/') },
+    { name: 'Inquirer', url: rss('https://newsinfo.inquirer.net/feed') },
+    { name: 'WPS Watch', url: rss('https://news.google.com/rss/search?q=(West+Philippine+Sea+OR+Scarborough+OR+Ayungin+OR+Second+Thomas+Shoal)+when:3d&hl=en-US&gl=US&ceid=US:en') },
+    // Indonesia
+    { name: 'Jakarta Post', url: rss('https://www.thejakartapost.com/rss') },
+    { name: 'Tempo English', url: rss('https://en.tempo.co/rss') },
+    // Malaysia
+    { name: 'Free Malaysia Today', url: rss('https://www.freemalaysiatoday.com/feed/') },
+    // Myanmar
+    { name: 'The Irrawaddy', url: rss('https://www.irrawaddy.com/feed') },
+    // Korea
+    { name: 'Korea Herald', url: rss('https://www.koreaherald.com/rss') },
+    { name: 'JoongAng Daily', url: rss('https://koreajoongangdaily.joins.com/rss') },
+    // APAC Think Tanks
+    { name: 'Lowy Institute', url: rss('https://www.lowyinstitute.org/the-interpreter/rss.xml') },
+    { name: 'ISEAS', url: rss('https://www.iseas.edu.sg/feed/') },
+    { name: 'AMTI (CSIS)', url: rss('https://amti.csis.org/feed/') },
+    { name: 'CSIS China Power', url: rss('https://chinapower.csis.org/feed/') },
+    { name: 'East Asia Forum', url: rss('https://eastasiaforum.org/feed/') },
   ],
   energy: [
     { name: 'Oil & Gas', url: rss('https://news.google.com/rss/search?q=(oil+price+OR+OPEC+OR+"natural+gas"+OR+pipeline+OR+LNG)+when:2d&hl=en-US&gl=US&ceid=US:en') },
     { name: 'Nuclear Energy', url: rss('https://news.google.com/rss/search?q=("nuclear+energy"+OR+"nuclear+power"+OR+uranium+OR+IAEA)+when:3d&hl=en-US&gl=US&ceid=US:en') },
     { name: 'Reuters Energy', url: rss('https://news.google.com/rss/search?q=site:reuters.com+(oil+OR+gas+OR+energy+OR+OPEC)+when:3d&hl=en-US&gl=US&ceid=US:en') },
     { name: 'Mining & Resources', url: rss('https://news.google.com/rss/search?q=(lithium+OR+"rare+earth"+OR+cobalt+OR+mining)+when:3d&hl=en-US&gl=US&ceid=US:en') },
+  ],
+  sustainability: [
+    // Climate & Environment
+    { name: 'Carbon Brief', url: rss('https://www.carbonbrief.org/feed/') },
+    { name: 'Climate Home News', url: rss('https://www.climatechangenews.com/feed/') },
+    { name: 'Reuters Climate', url: rss('https://news.google.com/rss/search?q=site:reuters.com+(climate+OR+carbon+OR+emissions+OR+renewable)+when:3d&hl=en-US&gl=US&ceid=US:en') },
+    { name: 'Guardian Climate', url: rss('https://www.theguardian.com/environment/climate-crisis/rss') },
+    { name: 'Inside Climate News', url: rss('https://insideclimatenews.org/feed/') },
+    // UN & International
+    { name: 'UNFCCC News', url: rss('https://news.google.com/rss/search?q=(UNFCCC+OR+COP+climate+OR+Paris+Agreement+OR+NDC+climate)+when:7d&hl=en-US&gl=US&ceid=US:en') },
+    { name: 'UNEP News', url: rss('https://news.google.com/rss/search?q=(UNEP+OR+"UN+Environment"+OR+biodiversity+convention)+when:7d&hl=en-US&gl=US&ceid=US:en') },
+    // ESG & Finance
+    { name: 'ESG Today', url: rss('https://www.esgtoday.com/feed/') },
+    { name: 'Responsible Investor', url: rss('https://www.responsible-investor.com/feed/') },
+    { name: 'Bloomberg Green', url: rss('https://news.google.com/rss/search?q=site:bloomberg.com+(ESG+OR+green+bond+OR+sustainable+finance+OR+carbon+market)+when:3d&hl=en-US&gl=US&ceid=US:en') },
+    // APAC Sustainability
+    { name: 'Eco-Business', url: rss('https://www.eco-business.com/rss/') },
+    { name: 'Asia Sustainability', url: rss('https://news.google.com/rss/search?q=(Asia+sustainability+OR+APAC+ESG+OR+Asia+renewable+energy+OR+Asia+carbon)+when:3d&hl=en-US&gl=US&ceid=US:en') },
+    { name: 'Taiwan Green Energy', url: rss('https://news.google.com/rss/search?q=(Taiwan+renewable+OR+Taiwan+offshore+wind+OR+Taiwan+solar+OR+Taiwan+net+zero)+when:7d&hl=en-US&gl=US&ceid=US:en') },
   ],
 };
 
@@ -1080,7 +1125,7 @@ export const SOURCE_REGION_MAP: Record<string, { labelKey: string; feedKeys: str
   africa: { labelKey: 'header.sourceRegionAfrica', feedKeys: ['africa'] },
   latam: { labelKey: 'header.sourceRegionLatAm', feedKeys: ['latam'] },
   asia: { labelKey: 'header.sourceRegionAsiaPacific', feedKeys: ['asia'] },
-  topical: { labelKey: 'header.sourceRegionTopical', feedKeys: ['energy', 'tech', 'ai', 'finance', 'layoffs', 'thinktanks'] },
+  topical: { labelKey: 'header.sourceRegionTopical', feedKeys: ['energy', 'sustainability', 'tech', 'ai', 'finance', 'layoffs', 'thinktanks'] },
   intel: { labelKey: 'header.sourceRegionIntel', feedKeys: [] },
 
   // Tech variant regions

@@ -406,13 +406,25 @@ export class EventHandlerManager implements AppModule {
             localStorage.setItem('worldmonitor-variant', variant);
             window.location.reload();
           } else {
-            const hosts: Record<string, string> = {
+            const isCoopTw = location.hostname.endsWith('cooperation.tw');
+            const hosts: Record<string, string> = isCoopTw ? {
+              full: location.origin + location.pathname,
+              tech: location.origin + location.pathname,
+              finance: location.origin + location.pathname,
+              happy: location.origin + location.pathname,
+            } : {
               full: 'https://worldmonitor.app',
               tech: 'https://tech.worldmonitor.app',
               finance: 'https://finance.worldmonitor.app',
               happy: 'https://happy.worldmonitor.app',
             };
-            if (hosts[variant]) window.location.href = hosts[variant];
+            if (isCoopTw) {
+              trackVariantSwitch(SITE_VARIANT, variant);
+              localStorage.setItem('worldmonitor-variant', variant);
+              window.location.reload();
+            } else if (hosts[variant]) {
+              window.location.href = hosts[variant];
+            }
           }
         }
       });

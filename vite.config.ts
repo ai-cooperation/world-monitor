@@ -575,7 +575,10 @@ function youtubeLivePlugin(): Plugin {
   };
 }
 
+const isGitHubPages = process.env.VITE_GITHUB_PAGES === '1';
+
 export default defineConfig({
+  base: isGitHubPages ? '/world-monitor/' : '/',
   define: {
     __APP_VERSION__: JSON.stringify(pkg.version),
   },

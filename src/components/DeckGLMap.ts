@@ -140,7 +140,7 @@ const VIEW_PRESETS: Record<DeckMapView, { longitude: number; latitude: number; z
   america: { longitude: -95, latitude: 38, zoom: 3 },
   mena: { longitude: 45, latitude: 28, zoom: 3.5 },
   eu: { longitude: 15, latitude: 50, zoom: 3.5 },
-  asia: { longitude: 105, latitude: 35, zoom: 3 },
+  asia: { longitude: 121.5, latitude: 25.0, zoom: 4 },
   latam: { longitude: -60, latitude: -15, zoom: 3 },
   africa: { longitude: 20, latitude: 5, zoom: 3 },
   oceania: { longitude: 135, latitude: -25, zoom: 3.5 },
