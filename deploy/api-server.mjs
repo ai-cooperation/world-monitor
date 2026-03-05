@@ -341,7 +341,12 @@ async function handleRequest(req, res, routes) {
     webResponse.headers.forEach((value, key) => {
       responseHeaders[key] = value;
     });
-    // Merge our CORS headers (override handler's CORS since we handle it)
+    // Remove gateway's lowercase CORS headers, then apply ours
+    for (const key of Object.keys(responseHeaders)) {
+      if (key.toLowerCase().startsWith('access-control-') || key.toLowerCase() === 'vary') {
+        delete responseHeaders[key];
+      }
+    }
     Object.assign(responseHeaders, corsHeaders);
 
     const responseBody = Buffer.from(await webResponse.arrayBuffer());
