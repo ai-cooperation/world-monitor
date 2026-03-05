@@ -821,7 +821,8 @@ export class PanelLayoutManager implements AppModule {
       });
     }
 
-    if (SITE_VARIANT !== 'happy') {
+    // APAC fork: skip forcing live-news/webcams to top — data-rich panels first
+    if (SITE_VARIANT !== 'happy' && !location.hostname.includes('cooperation.tw')) {
       const liveNewsIdx = panelOrder.indexOf('live-news');
       if (liveNewsIdx > 0) {
         panelOrder.splice(liveNewsIdx, 1);
