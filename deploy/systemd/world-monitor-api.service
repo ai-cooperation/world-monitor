@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=ac-macmini2
 WorkingDirectory=/home/ac-macmini2/world-monitor
-ExecStart=/usr/local/bin/node deploy/api-server.mjs
+ExecStart=/usr/local/bin/node --import tsx deploy/api-server.mjs
 Restart=always
 RestartSec=10
 Environment=NODE_ENV=production
